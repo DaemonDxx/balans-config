@@ -14,7 +14,7 @@ jobs:
       - name: Send config in server
         uses: garygrossgarten/github-action-scp@release
         with:
-            local: docker-compose.yaml
+            local: .
             remote: .
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USER }}
