@@ -1,2 +1,4 @@
-docker-compsoe down
+#!/bin/bash
+
+docker-compose down
 docker-compose up -d

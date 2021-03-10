@@ -19,12 +19,9 @@ jobs:
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USER }}
             password: ${{ secrets.SSH_PASSWORD }}
-  restart:
-    runs-on: ubuntu-latest
-    steps:
-      - name: send restart command
-        uses: appleboy/ssh-action@master
-        with:
+       - name: send restart command
+         uses: appleboy/ssh-action@master
+         with:
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USER }}
             password: ${{ secrets.SSH_PASSWORD }}
