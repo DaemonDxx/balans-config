@@ -9,11 +9,11 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - - name: checkout
-            uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
       - name: Send config in server
         uses: garygrossgarten/github-action-scp@release
-          with:
+        with:
             local: .
             remote: .
             host: ${{ secrets.SSH_HOST }}
