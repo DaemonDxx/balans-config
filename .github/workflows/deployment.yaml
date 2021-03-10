@@ -1,0 +1,22 @@
+name: 'deployment'
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - - name: checkout
+            uses: actions/checkout@v2
+      - name: Send config in server
+        uses: garygrossgarten/github-action-scp@release
+          with:
+            local: .
+            remote: .
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            password: ${{ secrets.SSH_PASSWORD }}
+            port: ${{ secrets.SSH_PORT }}
