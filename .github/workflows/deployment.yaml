@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -19,4 +19,3 @@ jobs:
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USER }}
             password: ${{ secrets.SSH_PASSWORD }}
-            port: ${{ secrets.SSH_PORT }}
