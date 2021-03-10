@@ -2,6 +2,18 @@ version: '3.3'
 
 services:
 
+  frontend:
+    image: daemondxx/balans-front:latest
+    ports:
+    - 8080:80
+
+  backend:
+    image: daemondxx/balans-back:latest
+    ports:
+    - 3000:3000
+    depends_on:
+      - mongo
+
   mongo:
     image: mongo:latest
     ports:
